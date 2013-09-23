@@ -1,0 +1,19 @@
+<h1>WINNERS TABLE</h1>
+
+<h3>Winners:</h3>
+
+<table>
+  <tr>
+    <th>Winner</th>
+    <th>Time</th>
+    <th>Link</th>
+  </tr>
+  <tr>
+    <% @games.each do |game| %>
+    <td><%= game.winner %></td>
+    <td><%= game.time %></td>
+    <td>"http://localhost:9393/game/<%= game.id %>"</td>
+      
+    <% end %>
+  </tr>
+</table>
