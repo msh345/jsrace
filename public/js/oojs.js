@@ -18,7 +18,7 @@ Game.prototype.start = function() {
 Game.prototype.finish = function() {
   
 }
-
+ 
 
 $(document).ready(function()
   var player1 = new Player("jim");
