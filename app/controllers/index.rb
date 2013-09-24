@@ -32,8 +32,7 @@ post '/game' do
 
   @game.players << [@player1,@player2] #game.players += [@player1,@player2]
 
-  return erb(:game) if @game.save
-  ###QUESTION: Why does the URL redirect to '/game' when we do not have a get '/game' method?
+  erb(:game) if @game.save
 
   erb :index
 

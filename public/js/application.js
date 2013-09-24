@@ -7,8 +7,8 @@ function updatePlayerPosition(player,startTime)
     }
   else 
     {
-    alert(player + " wins!")
     var finishTime = new Date()
+    alert(player + " wins!")
     var time = finishTime - startTime
     var gameId = $('table').attr('id')
     var data = {winner: player, time: time, game_id: gameId}
@@ -17,14 +17,14 @@ function updatePlayerPosition(player,startTime)
       });
     };
   }
- 
+
  
 $(document).ready(function()
   {
+  var startTime
   $(document).keyup(function(event) 
     {
-    var startTime = new Date()
-    // why does starTime not rewrite for every keyup event?
+    if (!startTime) startTime = new Date();
     if (event.keyCode === 71)
       {
       updatePlayerPosition('player1',startTime)
