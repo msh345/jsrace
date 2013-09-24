@@ -8,6 +8,13 @@ function updatePlayerPosition(player)
     }
   else 
     {
+    var a = new Date(0);
+    var b = new Date(0);
+    a.setHours(23);
+    b.setHours(1);
+    b.setMinutes(30);
+    c = a - b;
+
     // var finish = now
     // var time = finish - start
     // {winner: 'player1', time: time}

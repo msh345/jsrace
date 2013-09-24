@@ -21,7 +21,10 @@ post '/game' do
 end
 
 post '/winner' do
-  # Game.create(winner: , time: )
+  # @winner = Game.create(winner: , time: )
+  @time = 
   @games = Game.all
   redirect to '/winner'
 end
+
+#time.now()
