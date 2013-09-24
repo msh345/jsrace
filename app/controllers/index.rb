@@ -1,8 +1,6 @@
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
-
 
 
 get '/winner' do
@@ -15,9 +13,13 @@ end
 ##################POST######################
 
 post '/game' do
+  game = Game.new
+  
   @player1 = Player.find_or_create_by_name(params[:player1])
   @player2 = Player.find_or_create_by_name(params[:player2])
-  erb :game
+  game.players << [@player1,@player2] #game.players += [@player1,@player2]
+
+  game.save ? erb(:game) : erb(:index)
 end
 
 post '/winner' do
