@@ -1,3 +1,5 @@
+# ===================== Get ========================
+
 get '/' do
   # Look in app/views/index.erb
   erb :index
@@ -12,7 +14,7 @@ end
 
 
 
-##################POST######################
+# ==================== POST ==========================
 
 post '/game' do
   @player1 = Player.find_or_create_by_name(params[:player1])
