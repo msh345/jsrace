@@ -8,12 +8,11 @@
     <th>Time</th>
     <th>Link</th>
   </tr>
-  <tr>
     <% @games.each do |game| %>
-    <td><%= game.winner %></td>
-    <td><%= game.time %></td>
-    <td>"http://localhost:9393/game/<%= game.id %>"</td>
-      
+    <tr>
+      <td><%= game.winner %></td>
+      <td><%= game.time %></td>
+      <td><a href="http://localhost:9393/game/<%= game.id %>">http://localhost:9393/game/<%= game.id %></a></td>
+    </tr>
     <% end %>
-  </tr>
 </table>

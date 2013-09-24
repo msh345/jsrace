@@ -1,6 +1,5 @@
-function updatePlayerPosition(player)
+function updatePlayerPosition(player,startTime)
   {
-  // var start = now
   var active = $('#' + player + '_strip .active').removeClass('active')
   if(active.next().length)
     {
@@ -8,11 +7,14 @@ function updatePlayerPosition(player)
     }
   else 
     {
-    // var finish = now
-    // var time = finish - start
-    // {winner: 'player1', time: time}
     alert(player + " wins!")
-    $.post('/winner',time)
+    var finishTime = new Date()
+    var time = finishTime - startTime
+    var gameId = $('table').attr('id')
+    var data = {winner: player, time: time, game_id: gameId}
+      $.post('/winner',data, function() {
+        window.location.replace("/winner");
+      });
     };
   }
  
@@ -21,13 +23,17 @@ $(document).ready(function()
   {
   $(document).keyup(function(event) 
     {
+    var startTime = new Date()
+    // why does starTime not rewrite for every keyup event?
     if (event.keyCode === 71)
       {
-      updatePlayerPosition('player1')
+      updatePlayerPosition('player1',startTime)
       }
     else if (event.keyCode === 81) 
       {
-      updatePlayerPosition('player2')
+      updatePlayerPosition('player2',startTime)
       }
     });
   });
+
+

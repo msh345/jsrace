@@ -1,40 +1,35 @@
 <script src="/js/application.js"></script>
 
-<body>
- 
-<script src="/js/application.js"></script>
-
-<body>
- 
-  <table class="racer_table">
-    <tr id="player1_strip">
-      <td class="active"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr id="player2_strip">
-      <td class="active"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-  
-  
-</body>
- 
-</body>
+  <body>
+   
+    <table id="<%= @game.id %>"class="racer_table">
+      <tr id="player1_strip">
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr id="player2_strip">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="active"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+     
+  </body>
 </html>
+
+$('#player2_strip').find('active').whichC
