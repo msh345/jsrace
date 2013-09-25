@@ -49,6 +49,7 @@ post '/winner' do
     # content_type :json
     game = Game.find(params[:game_id])
     game.update_attributes(winner: params[:winner], time: params[:time])
-    # {status: 200}.to_json
+    @games = Game.all
+    erb :winner, layout: false
   end
 end

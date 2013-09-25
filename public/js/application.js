@@ -12,8 +12,8 @@
 //     var time = finishTime - startTime
 //     var gameId = $('table').attr('id')
 //     var data = {winner: player, time: time, game_id: gameId}
-//       $.post('/winner',data, function() {
-//         window.location.replace("/winner");
+//       $.post('/winner',data, function(response) {
+//         $('.container').html(response);
 //       });
 //     };
 //   }
@@ -67,12 +67,12 @@ Game.prototype.checkWinner = function(){
   if (this.player1.position == 11)
   {
   this.winner = this.player1.name
-  this.finish = new Date()
+  return this.finish = new Date()
   }
   else if (this.player2.position == 11)
   {
   this.winner = this.player2.name
-  this.finish = new Date()
+  return this.finish = new Date()
   }
 }
 
