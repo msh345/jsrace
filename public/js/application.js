@@ -76,7 +76,7 @@ Game.prototype.checkWinner = function(){
   }
 }
 
-Game.prototype.render = function(player) {
+Game.prototype.render = function() {
   $('.active').removeClass('active');
   $('#' + this.player1.name + ' td:nth-child(' + this.player1.position + ')').addClass('active');
   $('#' + this.player2.name + ' td:nth-child(' + this.player2.position + ')').addClass('active');
@@ -100,8 +100,8 @@ Game.prototype.packageData = function() {
 }
 
 Game.prototype.postAndReroute = function() {
-  $.post('/winner',this.data, function() {
-    window.location.replace('/winner')
+  $.post('/winner',this.data, function(response) {
+    $('.container').html(response);
   });
 }
 
