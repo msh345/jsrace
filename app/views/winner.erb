@@ -4,15 +4,17 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Winner</th>
     <th>Time</th>
     <th>Link</th>
   </tr>
     <% @games.each do |game| %>
     <tr>
+      <td><%= game.id %></td>
       <td><%= game.winner %></td>
       <td><%= game.time %></td>
-      <td><a href="http://localhost:9393/game/<%= game.id %>">http://localhost:9393/game/<%= game.id %></a></td>
+      <td><a href="http://localhost:9393/game/<%= game.id %>/old_game">http://localhost:9393/game/<%= game.id %></a></td>
     </tr>
     <% end %>
 </table>
